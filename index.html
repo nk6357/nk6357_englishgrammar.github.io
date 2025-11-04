@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изучаем английскую грамматику</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-theme {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-theme .container {
+            background: #3c3c3c;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        body.dark-theme h1 {
+            color: #ecf0f1;
+        }
+
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            font-size: 1.4em;
+        }
+
+        body.dark-theme h2 {
+            color: #3498db;
+        }
+
+        p {
+            font-size: 1em;
+        }
+
+        .logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px; /* Ограничиваем размер логотипа */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        body.dark-theme img {
+            border-color: #555;
+        }
+
+        .topic-link {
+            display: block;
+            padding: 12px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 8px 0;
+            text-align: center;
+            transition: background 0.3s;
+            font-size: 1em;
+        }
+
+        .topic-link:hover {
+            background: #2980b9;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        body.dark-theme footer {
+            color: #aaa;
+        }
+
+        .theme-toggle {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .theme-toggle button {
+            padding: 8px 16px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .theme-toggle button:hover {
+            background: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px auto;
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            .topic-link {
+                padding: 10px;
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Логотип -->
+        <img src="img/лого.png" alt="Логотип сайта" class="logo">
+
+        <h1>🎓 Изучаем английскую грамматику</h1>
+        <p>Добро пожаловать на сайт, созданный для изучения английской грамматики. Этот проект — альтернатива Telegram-бота, но в виде сайта, который всегда доступен.</p>
+
+        <!-- Кнопка переключения темы -->
+        <div class="theme-toggle">
+            <button id="theme-toggle-btn">Сменить тему</button>
+        </div>
+
+        <h2>📚 Содержание (Table of contents)</h2>
+        <p>Нажмите на тему, чтобы перейти к объяснению:</p>
+
+        <!-- Фото содержания -->
+        <img src="img/contents.png" alt="Table of Contents">
+
+        <!-- Ссылки на темы -->
+        <a href="grammar.html#topic1a" class="topic-link">1a. To be</a>
+        <a href="grammar.html#topic1b" class="topic-link">1b. Present Simple Tense</a>
+        <a href="grammar.html#topic2a" class="topic-link">2a. Wh- вопросительные слова</a>
+        <a href="grammar.html#topic2b" class="topic-link">2b. Указательные местоимения</a>
+        <a href="grammar.html#topic3a" class="topic-link">3a. Степени сравнения прилаг.</a>
+        <a href="grammar.html#topic3b" class="topic-link">3b. Present Continuous Tense</a>
+        <a href="grammar.html#topic4a" class="topic-link">4a. There is / There are</a>
+        <a href="grammar.html#topic4b" class="topic-link">4b. Притяжательный падеж</a>
+        <a href="grammar.html#topic5a" class="topic-link">5a. Past Simple Tense</a>
+        <a href="grammar.html#topic5b" class="topic-link">5b. Future Simple Tense</a>
+        <a href="grammar.html#topic6a" class="topic-link">6a. Pronouns: Местоимения</a>
+        <a href="grammar.html#topic6b" class="topic-link">6b. Time</a>
+        <a href="grammar.html#topic7a" class="topic-link">7a. Some и Any</a>
+        <a href="grammar.html#topic7b" class="topic-link">7b. Article</a>
+        <a href="grammar.html#topic8a" class="topic-link">8a. Предлоги времени - места</a>
+        <a href="grammar.html#topic8b" class="topic-link">8b. Likes and dislikes</a>
+        <a href="grammar.html#topic9a" class="topic-link">9a. Imperatives</a>
+        <a href="grammar.html#topic9b" class="topic-link">9b. How often?</a>
+        <a href="grammar.html#topic10a" class="topic-link">10a. Глаголы play/go/do с видами спорта</a>
+        <a href="grammar.html#topic10b" class="topic-link">10b. Present Perfect Tense</a>
+        <a href="grammar.html#topic11a" class="topic-link">11a. Linking words</a>
+        <a href="grammar.html#topic11b" class="topic-link">11b. Способы выражения Future S.</a>
+        <a href="grammar.html#topic12a" class="topic-link">12a. Описание внешности</a>
+        <a href="grammar.html#topic12b" class="topic-link">12b. Taboo words</a>
+        <a href="grammar.html#topic13a" class="topic-link">13a. Passive voice</a>
+        <a href="grammar.html#topic13b" class="topic-link">13b. Quantity + Quantifiers</a>
+        <a href="grammar.html#topic14a" class="topic-link">14a. Местоимения Some/Any/No</a>
+        <a href="grammar.html#topic14b" class="topic-link">14b. Past Perfect Tense</a>
+        <a href="grammar.html#topic15a" class="topic-link">15a. Conditionals</a>
+        <a href="grammar.html#topic15b" class="topic-link">15b. Money</a>
+        <a href="grammar.html#topic16a" class="topic-link">16a. Gerundium</a>
+        <a href="grammar.html#topic16b" class="topic-link">16b. Infinitive (инфинитив)</a>
+        <a href="grammar.html#topic17a" class="topic-link">17a. Транскрипция</a>
+        <a href="grammar.html#topic17b" class="topic-link">17b. Homonyms Pr. Cont.</a>
+        <a href="grammar.html#topic18a" class="topic-link">18a. Pr.S and Pr.Cont</a>
+        <a href="grammar.html#topic18b" class="topic-link">18b. Decomposition</a>
+        <a href="grammar.html#topic19a" class="topic-link">19a. Used to / be used to / get used to</a>
+        <a href="grammar.html#topic19b" class="topic-link">19b. I wish / If only</a>
+        <a href="grammar.html#topic20a" class="topic-link">20a. Quantifiers</a>
+        <a href="grammar.html#topic20b" class="topic-link">20b. ...</a>
+        <a href="grammar.html#topic21" class="topic-link">21. Reported Speech</a>
+
+        <!-- Раздел "О проекте" перемещён вниз -->
+        <h2>📋 О проекте</h2>
+        <p>Удобный инструмент для изучения грамматики английского языка. Он предназначен для учеников, студентов и всех, кто хочет улучшить свои знания.</p>
+        <p>Разработчик: Пьянков Никита</p>
+        <p>Учитель, составивший теорию: Куликова Юлия Владимировна</p>
+        <p>Ученик, чья тетрадь представлена на сайте: Решетникова Полина</p>
+
+        <footer>Создано Никитой Пьянковым • © 2025</footer>
+    </div>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const body = document.body;
+
+        // Проверяем сохранённую тему при загрузке
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-theme');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            body.classList.toggle('dark-theme');
+            // Сохраняем состояние темы в localStorage
+            if (body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
