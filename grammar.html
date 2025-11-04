@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грамматика по страницам</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-theme {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-theme .container {
+            background: #3c3c3c;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        body.dark-theme h1 {
+            color: #ecf0f1;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        body.dark-theme img {
+            border-color: #555;
+        }
+
+        .nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .nav a {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background 0.3s;
+            font-size: 1em;
+        }
+
+        .nav a:hover {
+            background: #2980b9;
+        }
+
+        .nav a.disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .nav a.disabled:hover {
+            background: #bdc3c7;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .theme-toggle button {
+            padding: 8px 16px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .theme-toggle button:hover {
+            background: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        body.dark-theme footer {
+            color: #aaa;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px auto;
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .nav a {
+                padding: 8px 12px;
+                font-size: 0.9em;
+                margin: 3px;
+            }
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Кнопка "Сменить тему" в правом верхнем углу -->
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn">Сменить тему</button>
+    </div>
+
+    <div class="container">
+        <h1>Грамматика по страницам</h1>
+
+        <!-- Страница 1 -->
+        <div id="page1" class="page active">
+            <h2>Страница 1</h2>
+            <img src="img/1.png" alt="Страница 1">
+            <div class="nav">
+                <!-- Кнопка "Предыдущая" отсутствует на первой странице -->
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page2">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 2 -->
+        <div id="page2" class="page">
+            <h2>Страница 2</h2>
+            <img src="img/2.png" alt="Страница 2">
+            <div class="nav">
+                <a href="#page1">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page3">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 3 -->
+        <div id="page3" class="page">
+            <h2>Страница 3</h2>
+            <img src="img/3.png" alt="Страница 3">
+            <div class="nav">
+                <a href="#page2">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page4">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 4 -->
+        <div id="page4" class="page">
+            <h2>Страница 4</h2>
+            <img src="img/4.png" alt="Страница 4">
+            <div class="nav">
+                <a href="#page3">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page5">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 5 -->
+        <div id="page5" class="page">
+            <h2>Страница 5</h2>
+            <img src="img/5.png" alt="Страница 5">
+            <div class="nav">
+                <a href="#page4">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page6">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 6 -->
+        <div id="page6" class="page">
+            <h2>Страница 6</h2>
+            <img src="img/6.png" alt="Страница 6">
+            <div class="nav">
+                <a href="#page5">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page7">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 7 -->
+        <div id="page7" class="page">
+            <h2>Страница 7</h2>
+            <img src="img/7.png" alt="Страница 7">
+            <div class="nav">
+                <a href="#page6">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page8">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 8 -->
+        <div id="page8" class="page">
+            <h2>Страница 8</h2>
+            <img src="img/8.png" alt="Страница 8">
+            <div class="nav">
+                <a href="#page7">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page9">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 9 -->
+        <div id="page9" class="page">
+            <h2>Страница 9</h2>
+            <img src="img/9.png" alt="Страница 9">
+            <div class="nav">
+                <a href="#page8">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page10">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 10 -->
+        <div id="page10" class="page">
+            <h2>Страница 10</h2>
+            <img src="img/10.png" alt="Страница 10">
+            <div class="nav">
+                <a href="#page9">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page11">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 11 -->
+        <div id="page11" class="page">
+            <h2>Страница 11</h2>
+            <img src="img/11.png" alt="Страница 11">
+            <div class="nav">
+                <a href="#page10">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page12">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 12 -->
+        <div id="page12" class="page">
+            <h2>Страница 12</h2>
+            <img src="img/12.png" alt="Страница 12">
+            <div class="nav">
+                <a href="#page11">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page13">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 13 -->
+        <div id="page13" class="page">
+            <h2>Страница 13</h2>
+            <img src="img/13.png" alt="Страница 13">
+            <div class="nav">
+                <a href="#page12">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page14">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 14 -->
+        <div id="page14" class="page">
+            <h2>Страница 14</h2>
+            <img src="img/14.png" alt="Страница 14">
+            <div class="nav">
+                <a href="#page13">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page15">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 15 -->
+        <div id="page15" class="page">
+            <h2>Страница 15</h2>
+            <img src="img/15.png" alt="Страница 15">
+            <div class="nav">
+                <a href="#page14">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page16">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 16 -->
+        <div id="page16" class="page">
+            <h2>Страница 16</h2>
+            <img src="img/16.png" alt="Страница 16">
+            <div class="nav">
+                <a href="#page15">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page17">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 17 -->
+        <div id="page17" class="page">
+            <h2>Страница 17</h2>
+            <img src="img/17.png" alt="Страница 17">
+            <div class="nav">
+                <a href="#page16">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page18">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 18 -->
+        <div id="page18" class="page">
+            <h2>Страница 18</h2>
+            <img src="img/18.png" alt="Страница 18">
+            <div class="nav">
+                <a href="#page17">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page19">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 19 -->
+        <div id="page19" class="page">
+            <h2>Страница 19</h2>
+            <img src="img/19.png" alt="Страница 19">
+            <div class="nav">
+                <a href="#page18">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page20">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 20 -->
+        <div id="page20" class="page">
+            <h2>Страница 20</h2>
+            <img src="img/20.png" alt="Страница 20">
+            <div class="nav">
+                <a href="#page19">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page21">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 21 -->
+        <div id="page21" class="page">
+            <h2>Страница 21</h2>
+            <img src="img/21.png" alt="Страница 21">
+            <div class="nav">
+                <a href="#page20">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page22">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 22 -->
+        <div id="page22" class="page">
+            <h2>Страница 22</h2>
+            <img src="img/22.png" alt="Страница 22">
+            <div class="nav">
+                <a href="#page21">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page23">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 23 -->
+        <div id="page23" class="page">
+            <h2>Страница 23</h2>
+            <img src="img/23.png" alt="Страница 23">
+            <div class="nav">
+                <a href="#page22">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page24">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 24 -->
+        <div id="page24" class="page">
+            <h2>Страница 24</h2>
+            <img src="img/24.png" alt="Страница 24">
+            <div class="nav">
+                <a href="#page23">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page25">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 25 -->
+        <div id="page25" class="page">
+            <h2>Страница 25</h2>
+            <img src="img/25.png" alt="Страница 25">
+            <div class="nav">
+                <a href="#page24">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page26">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 26 -->
+        <div id="page26" class="page">
+            <h2>Страница 26</h2>
+            <img src="img/26.png" alt="Страница 26">
+            <div class="nav">
+                <a href="#page25">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page27">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 27 -->
+        <div id="page27" class="page">
+            <h2>Страница 27</h2>
+            <img src="img/27.png" alt="Страница 27">
+            <div class="nav">
+                <a href="#page26">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page28">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 28 -->
+        <div id="page28" class="page">
+            <h2>Страница 28</h2>
+            <img src="img/28.png" alt="Страница 28">
+            <div class="nav">
+                <a href="#page27">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page29">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 29 -->
+        <div id="page29" class="page">
+            <h2>Страница 29</h2>
+            <img src="img/29.png" alt="Страница 29">
+            <div class="nav">
+                <a href="#page28">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page30">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 30 -->
+        <div id="page30" class="page">
+            <h2>Страница 30</h2>
+            <img src="img/30.png" alt="Страница 30">
+            <div class="nav">
+                <a href="#page29">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page31">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 31 -->
+        <div id="page31" class="page">
+            <h2>Страница 31</h2>
+            <img src="img/31.png" alt="Страница 31">
+            <div class="nav">
+                <a href="#page30">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page32">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 32 -->
+        <div id="page32" class="page">
+            <h2>Страница 32</h2>
+            <img src="img/32.png" alt="Страница 32">
+            <div class="nav">
+                <a href="#page31">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page33">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 33 -->
+        <div id="page33" class="page">
+            <h2>Страница 33</h2>
+            <img src="img/33.png" alt="Страница 33">
+            <div class="nav">
+                <a href="#page32">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page34">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 34 -->
+        <div id="page34" class="page">
+            <h2>Страница 34</h2>
+            <img src="img/34.png" alt="Страница 34">
+            <div class="nav">
+                <a href="#page33">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page35">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 35 -->
+        <div id="page35" class="page">
+            <h2>Страница 35</h2>
+            <img src="img/35.png" alt="Страница 35">
+            <div class="nav">
+                <a href="#page34">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page36">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 36 -->
+        <div id="page36" class="page">
+            <h2>Страница 36</h2>
+            <img src="img/36.png" alt="Страница 36">
+            <div class="nav">
+                <a href="#page35">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page37">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 37 -->
+        <div id="page37" class="page">
+            <h2>Страница 37</h2>
+            <img src="img/37.png" alt="Страница 37">
+            <div class="nav">
+                <a href="#page36">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page38">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 38 -->
+        <div id="page38" class="page">
+            <h2>Страница 38</h2>
+            <img src="img/38.png" alt="Страница 38">
+            <div class="nav">
+                <a href="#page37">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page39">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 39 -->
+        <div id="page39" class="page">
+            <h2>Страница 39</h2>
+            <img src="img/39.png" alt="Страница 39">
+            <div class="nav">
+                <a href="#page38">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page40">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 40 -->
+        <div id="page40" class="page">
+            <h2>Страница 40</h2>
+            <img src="img/40.png" alt="Страница 40">
+            <div class="nav">
+                <a href="#page39">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <a href="#page41">Следующая →</a>
+            </div>
+        </div>
+
+        <!-- Страница 41 -->
+        <div id="page41" class="page">
+            <h2>Страница 41</h2>
+            <img src="img/41.png" alt="Страница 41">
+            <div class="nav">
+                <a href="#page40">← Предыдущая</a>
+                <a href="index.html">Назад к содержанию</a>
+                <!-- Кнопка "Следующая" отсутствует -->
+            </div>
+        </div>
+
+        <footer>Создано для школьного проекта • © 2025</footer>
+    </div>
+
+    <script>
+        // JavaScript для переключения темы
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const body = document.body;
+
+        // Проверяем сохранённую тему при загрузке
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-theme');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            body.classList.toggle('dark-theme');
+            // Сохраняем состояние темы в localStorage
+            if (body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // JavaScript для переключения страниц
+        const hash = window.location.hash;
+
+        // Если есть хэш, показываем соответствующую страницу
+        if (hash) {
+            // Сначала скрываем все страницы
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            // Показываем страницу с нужным ID
+            const targetPage = document.querySelector(hash);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+        }
+
+        // Добавляем обработчик события для изменения хэша (если пользователь сам меняет URL)
+        window.addEventListener('hashchange', function() {
+            const newHash = window.location.hash;
+            if (newHash) {
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                const targetPage = document.querySelector(newHash);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
