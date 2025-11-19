@@ -20,6 +20,12 @@
             color: #e0e0e0;
         }
 
+        /* Новый CSS-класс для розовой темы */
+        body.pink-theme {
+            background: linear-gradient(135deg, #ffc0cb, #ffb6c1, #ff69b4); /* Розовый градиент */
+            color: #8b0000; /* Темно-розовый/бордовый текст */
+        }
+
         .container {
             max-width: 800px;
             margin: 20px auto;
@@ -34,6 +40,12 @@
             background: #3c3c3c;
         }
 
+        /* Розовая тема для контейнера */
+        body.pink-theme .container {
+            background: rgba(255, 255, 255, 0.9); /* Белый с прозрачностью */
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5); /* Розовая тень */
+        }
+
         h1 {
             color: #2c3e50;
             text-align: center;
@@ -42,6 +54,12 @@
 
         body.dark-theme h1 {
             color: #ecf0f1;
+        }
+
+        /* Розовая тема для заголовка */
+        body.pink-theme h1 {
+            color: #8b0000;
+            text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.5);
         }
 
         .page {
@@ -63,6 +81,12 @@
 
         body.dark-theme img {
             border-color: #555;
+        }
+
+        /* Розовая тема для изображений */
+        body.pink-theme img {
+            border-color: #ff1493;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
         }
 
         .nav {
@@ -95,6 +119,24 @@
             background: #bdc3c7;
         }
 
+        /* Розовая тема для навигационных кнопок */
+        body.pink-theme .nav a {
+            background: #ff69b4;
+            color: white;
+        }
+
+        body.pink-theme .nav a:hover {
+            background: #ff1493;
+        }
+
+        body.pink-theme .nav a.disabled {
+            background: #ffb6c1;
+        }
+
+        body.pink-theme .nav a.disabled:hover {
+            background: #ffb6c1;
+        }
+
         .theme-toggle {
             position: fixed;
             top: 20px;
@@ -116,6 +158,16 @@
             background: #2980b9;
         }
 
+        /* Розовая тема для кнопки смены темы */
+        body.pink-theme .theme-toggle button {
+            background: #ff69b4;
+            color: white;
+        }
+
+        body.pink-theme .theme-toggle button:hover {
+            background: #ff1493;
+        }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -125,6 +177,45 @@
 
         body.dark-theme footer {
             color: #aaa;
+        }
+
+        /* Розовая тема для подвала */
+        body.pink-theme footer {
+            color: #8b0000;
+        }
+
+        /* Стиль для секретного слова */
+        .secret-pink-word {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .secret-pink-word::before {
+            content: "х";
+            color: inherit;
+        }
+
+        .secret-pink-word::after {
+            content: "чет";
+            color: inherit;
+        }
+
+        .secret-pink-word span {
+            color: #ff69b4; /* Розовый цвет буквы "о" */
+        }
+
+        /* Стиль для сообщения о пасхалке */
+        .easter-egg-message {
+            text-align: center;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #ff1493;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        body.pink-theme .easter-egg-message {
+            opacity: 1;
         }
 
         @media (max-width: 600px) {
@@ -162,7 +253,7 @@
             <img src="img/1.png" alt="Страница 1">
             <div class="nav">
                 <!-- Кнопка "Предыдущая" отсутствует на первой странице -->
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page2">Следующая →</a>
             </div>
         </div>
@@ -173,7 +264,7 @@
             <img src="img/2.png" alt="Страница 2">
             <div class="nav">
                 <a href="#page1">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page3">Следующая →</a>
             </div>
         </div>
@@ -184,7 +275,7 @@
             <img src="img/3.png" alt="Страница 3">
             <div class="nav">
                 <a href="#page2">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page4">Следующая →</a>
             </div>
         </div>
@@ -195,7 +286,7 @@
             <img src="img/4.png" alt="Страница 4">
             <div class="nav">
                 <a href="#page3">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page5">Следующая →</a>
             </div>
         </div>
@@ -206,7 +297,7 @@
             <img src="img/5.png" alt="Страница 5">
             <div class="nav">
                 <a href="#page4">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page6">Следующая →</a>
             </div>
         </div>
@@ -217,7 +308,7 @@
             <img src="img/6.png" alt="Страница 6">
             <div class="nav">
                 <a href="#page5">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page7">Следующая →</a>
             </div>
         </div>
@@ -228,7 +319,7 @@
             <img src="img/7.png" alt="Страница 7">
             <div class="nav">
                 <a href="#page6">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page8">Следующая →</a>
             </div>
         </div>
@@ -239,7 +330,7 @@
             <img src="img/8.png" alt="Страница 8">
             <div class="nav">
                 <a href="#page7">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page9">Следующая →</a>
             </div>
         </div>
@@ -250,7 +341,7 @@
             <img src="img/9.png" alt="Страница 9">
             <div class="nav">
                 <a href="#page8">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page10">Следующая →</a>
             </div>
         </div>
@@ -261,7 +352,7 @@
             <img src="img/10.png" alt="Страница 10">
             <div class="nav">
                 <a href="#page9">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page11">Следующая →</a>
             </div>
         </div>
@@ -272,7 +363,7 @@
             <img src="img/11.png" alt="Страница 11">
             <div class="nav">
                 <a href="#page10">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page12">Следующая →</a>
             </div>
         </div>
@@ -283,7 +374,7 @@
             <img src="img/12.png" alt="Страница 12">
             <div class="nav">
                 <a href="#page11">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page13">Следующая →</a>
             </div>
         </div>
@@ -294,7 +385,7 @@
             <img src="img/13.png" alt="Страница 13">
             <div class="nav">
                 <a href="#page12">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page14">Следующая →</a>
             </div>
         </div>
@@ -305,7 +396,7 @@
             <img src="img/14.png" alt="Страница 14">
             <div class="nav">
                 <a href="#page13">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page15">Следующая →</a>
             </div>
         </div>
@@ -316,7 +407,7 @@
             <img src="img/15.png" alt="Страница 15">
             <div class="nav">
                 <a href="#page14">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page16">Следующая →</a>
             </div>
         </div>
@@ -327,7 +418,7 @@
             <img src="img/16.png" alt="Страница 16">
             <div class="nav">
                 <a href="#page15">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page17">Следующая →</a>
             </div>
         </div>
@@ -338,7 +429,7 @@
             <img src="img/17.png" alt="Страница 17">
             <div class="nav">
                 <a href="#page16">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page18">Следующая →</a>
             </div>
         </div>
@@ -349,7 +440,7 @@
             <img src="img/18.png" alt="Страница 18">
             <div class="nav">
                 <a href="#page17">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page19">Следующая →</a>
             </div>
         </div>
@@ -360,7 +451,7 @@
             <img src="img/19.png" alt="Страница 19">
             <div class="nav">
                 <a href="#page18">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page20">Следующая →</a>
             </div>
         </div>
@@ -371,7 +462,7 @@
             <img src="img/20.png" alt="Страница 20">
             <div class="nav">
                 <a href="#page19">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page21">Следующая →</a>
             </div>
         </div>
@@ -382,7 +473,7 @@
             <img src="img/21.png" alt="Страница 21">
             <div class="nav">
                 <a href="#page20">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page22">Следующая →</a>
             </div>
         </div>
@@ -393,7 +484,7 @@
             <img src="img/22.png" alt="Страница 22">
             <div class="nav">
                 <a href="#page21">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page23">Следующая →</a>
             </div>
         </div>
@@ -404,7 +495,7 @@
             <img src="img/23.png" alt="Страница 23">
             <div class="nav">
                 <a href="#page22">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page24">Следующая →</a>
             </div>
         </div>
@@ -415,7 +506,7 @@
             <img src="img/24.png" alt="Страница 24">
             <div class="nav">
                 <a href="#page23">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page25">Следующая →</a>
             </div>
         </div>
@@ -426,7 +517,7 @@
             <img src="img/25.png" alt="Страница 25">
             <div class="nav">
                 <a href="#page24">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page26">Следующая →</a>
             </div>
         </div>
@@ -437,7 +528,7 @@
             <img src="img/26.png" alt="Страница 26">
             <div class="nav">
                 <a href="#page25">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page27">Следующая →</a>
             </div>
         </div>
@@ -448,7 +539,7 @@
             <img src="img/27.png" alt="Страница 27">
             <div class="nav">
                 <a href="#page26">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page28">Следующая →</a>
             </div>
         </div>
@@ -459,7 +550,7 @@
             <img src="img/28.png" alt="Страница 28">
             <div class="nav">
                 <a href="#page27">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page29">Следующая →</a>
             </div>
         </div>
@@ -470,7 +561,7 @@
             <img src="img/29.png" alt="Страница 29">
             <div class="nav">
                 <a href="#page28">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page30">Следующая →</a>
             </div>
         </div>
@@ -481,7 +572,7 @@
             <img src="img/30.png" alt="Страница 30">
             <div class="nav">
                 <a href="#page29">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page31">Следующая →</a>
             </div>
         </div>
@@ -492,7 +583,7 @@
             <img src="img/31.png" alt="Страница 31">
             <div class="nav">
                 <a href="#page30">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page32">Следующая →</a>
             </div>
         </div>
@@ -503,7 +594,7 @@
             <img src="img/32.png" alt="Страница 32">
             <div class="nav">
                 <a href="#page31">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page33">Следующая →</a>
             </div>
         </div>
@@ -514,7 +605,7 @@
             <img src="img/33.png" alt="Страница 33">
             <div class="nav">
                 <a href="#page32">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page34">Следующая →</a>
             </div>
         </div>
@@ -525,7 +616,7 @@
             <img src="img/34.png" alt="Страница 34">
             <div class="nav">
                 <a href="#page33">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page35">Следующая →</a>
             </div>
         </div>
@@ -536,7 +627,7 @@
             <img src="img/35.png" alt="Страница 35">
             <div class="nav">
                 <a href="#page34">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page36">Следующая →</a>
             </div>
         </div>
@@ -547,7 +638,7 @@
             <img src="img/36.png" alt="Страница 36">
             <div class="nav">
                 <a href="#page35">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page37">Следующая →</a>
             </div>
         </div>
@@ -558,7 +649,7 @@
             <img src="img/37.png" alt="Страница 37">
             <div class="nav">
                 <a href="#page36">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page38">Следующая →</a>
             </div>
         </div>
@@ -569,7 +660,7 @@
             <img src="img/38.png" alt="Страница 38">
             <div class="nav">
                 <a href="#page37">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page39">Следующая →</a>
             </div>
         </div>
@@ -580,7 +671,7 @@
             <img src="img/39.png" alt="Страница 39">
             <div class="nav">
                 <a href="#page38">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page40">Следующая →</a>
             </div>
         </div>
@@ -591,7 +682,7 @@
             <img src="img/40.png" alt="Страница 40">
             <div class="nav">
                 <a href="#page39">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <a href="#page41">Следующая →</a>
             </div>
         </div>
@@ -602,7 +693,7 @@
             <img src="img/41.png" alt="Страница 41">
             <div class="nav">
                 <a href="#page40">← Предыдущая</a>
-                <a href="index.html">← Назад к содержанию</a>
+                <a href="index.html">Назад к содержанию</a>
                 <!-- Кнопка "Следующая" отсутствует -->
             </div>
         </div>
@@ -610,10 +701,17 @@
         <footer>Создано Никитой Пьянковым • © 2025</footer>
     </div>
 
+    <!-- Сообщение о пасхалке -->
+    <div class="easter-egg-message" id="easter-egg-message">
+        Поздравляю, вы нашли пасхалку!
+    </div>
+
     <script>
         // JavaScript для переключения темы
         const themeToggleBtn = document.getElementById('theme-toggle-btn');
         const body = document.body;
+        const secretPinkWord = document.querySelector('.secret-pink-word');
+        const easterEggMessage = document.getElementById('easter-egg-message');
 
         // Проверяем сохранённую тему при загрузке
         if (localStorage.getItem('theme') === 'dark') {
@@ -665,6 +763,17 @@
             if (link.textContent.includes('← Назад к содержанию')) {
                 link.textContent = 'Назад к содержанию';
             }
+        });
+
+        // --- НОВОЕ: Секретное слово "хочет" ---
+        secretPinkWord.addEventListener('click', function() {
+            body.classList.add('pink-theme');
+            // Показываем сообщение о пасхалке
+            easterEggMessage.style.opacity = '1';
+            // Меняем кнопку на "Секретная тема"
+            themeToggleBtn.textContent = 'Секретная тема';
+            themeToggleBtn.disabled = true;
+            themeToggleBtn.style.cursor = 'default';
         });
     </script>
 </body>
