@@ -20,6 +20,12 @@
             color: #e0e0e0;
         }
 
+        /* Новый CSS-класс для розовой темы */
+        body.pink-theme {
+            background: linear-gradient(135deg, #ffc0cb, #ffb6c1, #ff69b4); /* Розовый градиент */
+            color: #8b0000; /* Темно-розовый/бордовый текст */
+        }
+
         .container {
             max-width: 800px;
             margin: 20px auto;
@@ -34,6 +40,12 @@
             background: #3c3c3c;
         }
 
+        /* Розовая тема для контейнера */
+        body.pink-theme .container {
+            background: rgba(255, 255, 255, 0.9); /* Белый с прозрачностью */
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5); /* Розовая тень */
+        }
+
         h1 {
             color: #2c3e50;
             text-align: center;
@@ -42,6 +54,12 @@
 
         body.dark-theme h1 {
             color: #ecf0f1;
+        }
+
+        /* Розовая тема для заголовка */
+        body.pink-theme h1 {
+            color: #8b0000;
+            text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.5);
         }
 
         h2 {
@@ -54,16 +72,13 @@
             color: #3498db;
         }
 
-        p {
-            font-size: 1em;
+        /* Розовая тема для подзаголовков */
+        body.pink-theme h2 {
+            color: #ff1493;
         }
 
-        .logo {
-            display: block;
-            margin: 20px auto;
-            max-width: 200px;
-            height: auto;
-            border-radius: 8px;
+        p {
+            font-size: 1em;
         }
 
         img {
@@ -77,6 +92,12 @@
 
         body.dark-theme img {
             border-color: #555;
+        }
+
+        /* Розовая тема для изображений */
+        body.pink-theme img {
+            border-color: #ff1493;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
         }
 
         .topic-link {
@@ -96,11 +117,19 @@
             background: #2980b9;
         }
 
+        /* Розовая тема для ссылок-кнопок */
+        body.pink-theme .topic-link {
+            background: #ff69b4;
+            color: white;
+        }
+
+        body.pink-theme .topic-link:hover {
+            background: #ff1493;
+        }
+
         .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+            text-align: center;
+            margin: 20px 0;
         }
 
         .theme-toggle button {
@@ -117,15 +146,48 @@
             background: #2980b9;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #777;
+        /* Розовая тема для кнопки смены темы */
+        body.pink-theme .theme-toggle button {
+            background: #ff69b4;
+            color: white;
         }
 
-        body.dark-theme footer {
-            color: #aaa;
+        body.pink-theme .theme-toggle button:hover {
+            background: #ff1493;
+        }
+
+        /* Стиль для секретного слова */
+        .secret-pink-word {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .secret-pink-word::before {
+            content: "х";
+            color: inherit;
+        }
+
+        .secret-pink-word::after {
+            content: "чет";
+            color: inherit;
+        }
+
+        .secret-pink-word span {
+            color: #ff69b4; /* Розовый цвет буквы "о" */
+        }
+
+        /* Стиль для сообщения о пасхалке */
+        .easter-egg-message {
+            text-align: center;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #ff1493;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        body.pink-theme .easter-egg-message {
+            opacity: 1;
         }
 
         @media (max-width: 600px) {
@@ -143,21 +205,18 @@
                 padding: 10px;
                 font-size: 0.95em;
             }
-            .theme-toggle {
-                top: 10px;
-                right: 10px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Логотип -->
-        <img src="img/лого.png" alt="Логотип сайта" class="logo">
+        <h1>🎓 Изучаем английскую грамматику</h1>
+        <p>Добро пожаловать на сайт, созданный для изучения английской грамматики. Этот проект — альтернатива Telegram-бота, но в виде сайта, который всегда доступен.</p>
 
-        <h1>🎓 English Grammar</h1>
-        <p>Добро пожаловать на сайт-тетрадь для изучения английской грамматики.</p>
-	<p>Автор теории: Куликова Юлия Владимировна</p>
+        <!-- Кнопка переключения темы -->
+        <div class="theme-toggle">
+            <button id="theme-toggle-btn">Сменить тему</button>
+        </div>
 
         <h2>📚 Содержание (Table of contents)</h2>
         <p>Нажмите на страницу, на которую хотите перейти:</p>
@@ -210,7 +269,7 @@
 
         <!-- Раздел "О проекте" перемещён вниз -->
         <h2>📋 О проекте</h2>
-        <p>Удобный инструмент для изучения грамматики английского языка. Он предназначен для учеников, студентов и всех, кто хочет улучшить свои знания.</p>
+        <p>Удобный инструмент для изучения грамматики английского языка. Он предназначен для учеников, студентов и всех, кто <span class="secret-pink-word"><span>о</span></span> улучшить свои знания.</p>
         <p>Разработчик сайта: Пьянков Никита</p>
         <p>Учитель, составивший теорию: Куликова Юлия Владимировна</p>
         <p>Ученик, чья тетрадь представлена на сайте: Решетникова Полина</p>
@@ -218,14 +277,16 @@
         <footer>Создано Никитой Пьянковым • © 2025</footer>
     </div>
 
-    <!-- Кнопка "Сменить тему" в правом верхнем углу -->
-    <div class="theme-toggle">
-        <button id="theme-toggle-btn">Сменить тему</button>
+    <!-- Сообщение о пасхалке -->
+    <div class="easter-egg-message" id="easter-egg-message">
+        Поздравляю, вы нашли пасхалку!
     </div>
 
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle-btn');
         const body = document.body;
+        const secretPinkWord = document.querySelector('.secret-pink-word');
+        const easterEggMessage = document.getElementById('easter-egg-message');
 
         // Проверяем сохранённую тему при загрузке
         if (localStorage.getItem('theme') === 'dark') {
@@ -241,7 +302,17 @@
                 localStorage.setItem('theme', 'light');
             }
         });
+
+        // --- НОВОЕ: Секретное слово "хочет" ---
+        secretPinkWord.addEventListener('click', function() {
+            body.classList.add('pink-theme');
+            // Показываем сообщение о пасхалке
+            easterEggMessage.style.opacity = '1';
+            // Меняем кнопку на "Секретная тема"
+            themeToggleBtn.textContent = 'Секретная тема';
+            themeToggleBtn.disabled = true;
+            themeToggleBtn.style.cursor = 'default';
+        });
     </script>
 </body>
-
 </html>
